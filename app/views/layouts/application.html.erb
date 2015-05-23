@@ -7,9 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>ANOKORO</h1>
+<nav class="navbar navbar-default">
+<span class="navbar-brand">
+ANOKORO
+</span>
+</nav>
+<div class="container">
 <%= yield %>
 <p><%= link_to "home", root_path %></p>
 <p><%= link_to "new", new_ningen_path %></p>
+</div>
 </body>
 </html>
