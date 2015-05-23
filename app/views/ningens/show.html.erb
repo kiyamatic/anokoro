@@ -1,0 +1,24 @@
+<h2><%= @ningen.name %></h2>
+<%= @ningen.description %><br>
+<%= @ningen.category %><br>
+<%= image_tag (@ningen.img_url) %>
+
+
+<% @ningen.tasks.each do |task| %>
+<p><%= task.age %></p>
+<p><%= task.event %></p>
+<% end %>
+<p><%= form_for [@ningen, @ningen.tasks.build] do |f| %></p>
+<p>
+	<%= f.label :age %>
+	<%= f.text_field :age %>
+</p>
+<p>
+	<%= f.label :event %>
+	<%= f.text_field :event %>
+</p>
+<%= f.submit %>
+<% end %>
+<p><%= link_to "edit", edit_ningen_path %></p>
+<p><%= link_to "delete", ningen_path, method: :delete, data: {
+	confirm: "are you sure"} %></p>

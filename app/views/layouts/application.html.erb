@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anotoki</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>ANOKORO</h1>
+<%= yield %>
+<p><%= link_to "home", root_path %></p>
+<p><%= link_to "new", new_ningen_path %></p>
+</body>
+</html>

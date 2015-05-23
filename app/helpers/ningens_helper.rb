@@ -1,0 +1,2 @@
+module NingensHelper
+end
