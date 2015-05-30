@@ -1,45 +1,31 @@
-<h2><%= @ningen.name %></h2>
-<%= @ningen.description %><br>
-<%= @ningen.category %><br>
-<div class="image">
-<%= image_tag (@ningen.img_url) %>
+<div class="bs-docs-header">
+	<div class="image">
+	<%= image_tag (@ningen.img_url) %>
+	</div>
+	<h2><%= @ningen.name %></h2>
+	<%= @ningen.description %><br>
+	<%= @ningen.category %><br>
+
 </div>
-
-
-<% @ningen.tasks.each do |task| %>
-<p><%= task.age %></p>
-<p><%= task.event %></p>
-<% end %>
-<p><%= form_for [@ningen, @ningen.tasks.build] do |f| %></p>
-<p>
-	<%= f.label :age %>
-	<%= f.text_field :age %>
-</p>
-<p>
-	<%= f.label :event %>
-	<%= f.text_field :event %>
-</p>
-<%= f.submit %>
-<% end %>
+<div class="container">
+	<% @ningen.tasks.each do |task| %>
+	<p><%= task.age %></p>
+	<p><%= task.event %></p>
+	<% end %>
+	<div class="form-group">
+		<p><%= form_for [@ningen, @ningen.tasks.build] do |f| %></p>
+		<p>
+			<%= f.label :age %>
+			<%= f.text_field :age %>
+		</p>
+		<p>
+			<%= f.label :event %>
+			<%= f.text_field :event %>
+		</p>
+		<%= f.submit %>
+		<% end %>
+	</div>
+</div>
 <p><%= link_to "edit", edit_ningen_path %></p>
 <p><%= link_to "delete", ningen_path, method: :delete, data: {
 	confirm: "are you sure"} %></p>
-
-<style>
-.frame {
-	position: relative;
-	display: inline-block;
-	border-radius: 50%;
-	width: 250px;
-	height: 250px;
-}
-.image{
-	width: 300px;
-}
-.image img{
-    border-radius: 610px;
-    -webkit-border-radius: 610px;
-    -moz-border-radius: 610px;
-    width: 100%;
-}
-</style>

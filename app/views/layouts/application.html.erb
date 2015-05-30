@@ -8,14 +8,16 @@
 </head>
 <body>
 <nav class="navbar navbar-default">
-<span class="navbar-brand">
-ANOKORO
-</span>
+	<span class="navbar-brand">
+		ANOKORO
+	</span>
 </nav>
 <div class="container">
-<%= yield %>
-<p><%= link_to "home", root_path %></p>
-<p><%= link_to "new", new_ningen_path %></p>
+	<%= yield %>
+	<div class="bottan">
+		<p><%= link_to "home", root_path , :class => "btn btn-default" %></p>
+		<p><%= link_to "new", new_ningen_path , :class => "btn btn-default" %></p>
+	</div>
 </div>
 </body>
 </html>

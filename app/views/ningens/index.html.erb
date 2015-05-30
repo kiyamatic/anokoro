@@ -1,5 +1,16 @@
 <ul>
 	<% @ningens.each do |ningens| %>
-	<li><%= link_to ningens.name, ningens %></li>
+
+	<li>
+		<div class="left">
+			<div class="list_face">
+				<%= image_tag (ningens.img_url) %>
+			</div>
+
+		</div>
+		<h2><%= link_to ningens.name, ningens %></h2>
+		<h4><%= ningens.description %></h4>
+		<p><%= ningens.category %></p>
+	</li>
 	<% end %>
 </ul>
