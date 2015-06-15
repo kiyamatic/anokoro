@@ -47,3 +47,5 @@ gem 'execjs'
 # Twitter社が提供しているCSSとJavaScriptのフレームワーク
 gem 'twitter-bootstrap-rails'
 
+# htmlをhalに書き換えてくれる
+gem "haml-rails", "~> 0.9"

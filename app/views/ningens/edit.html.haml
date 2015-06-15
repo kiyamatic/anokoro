@@ -1,0 +1,23 @@
+%h1 edit
+= form_for @ningen do |f|
+  %p
+    = f.label :name
+    %br/
+    = f.text_field :name
+    - if @ningen.errors.any?
+      = @ningen.errors.messages[:name][0]
+  %p
+    = f.label :description
+    %br/
+    = f.text_field :description
+  %p
+    = f.label :category
+    %br/
+    / <haml_loud> f.text_field :category </haml_loud>
+    = f.select :category, ["経営者", "実業家", "発明家", "芸術家", "政治家"]
+  %p
+    = f.label :img_url
+    %br/
+    = f.text_field :img_url
+  %p
+    = f.submit "更新"

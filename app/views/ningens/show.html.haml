@@ -1,0 +1,31 @@
+%div.rails.s.bs-docs-header
+  .header_area
+    .image
+      = image_tag (@ningen.img_url)
+    .main_right
+      %h2.name
+        = @ningen.name
+        %span.category= @ningen.category
+      %p.description
+        = @ningen.description
+.container
+  - @ningen.tasks.each do |task|
+    .age_content
+      %p.age
+        = task.age
+        %span 歳
+      %p.event= task.event
+.form-group
+  %p
+    = form_for [@ningen, @ningen.tasks.build] do |f|
+      %p
+        = f.label :年齢
+        = f.text_field :age
+      %p
+        = f.label :イベント
+        = f.text_field :event
+      = f.submit(["イベントを追加する"])
+.bottan
+  %p= link_to "edit", edit_ningen_path , :class => "btn btn-default"
+  %p= link_to "delete", ningen_path, method: :delete, data: { |
+      confirm: "are you sure"} , :class => "btn btn-default"  |

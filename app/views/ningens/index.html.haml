@@ -1,0 +1,9 @@
+%ul
+  - @ningens.each do |ningens|
+    %li
+      .left
+        .list_face
+          = image_tag (ningens.img_url)
+      %h2= link_to ningens.name, ningens
+      %h4= ningens.description
+      %p= ningens.category
