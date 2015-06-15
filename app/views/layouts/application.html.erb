@@ -14,9 +14,9 @@
 </nav>
 <div class="container">
 	<%= yield %>
-	<div class="bottan">
-		<p><%= link_to "home", root_path , :class => "btn btn-default" %></p>
-		<p><%= link_to "new", new_ningen_path , :class => "btn btn-default" %></p>
+	<div class="bottan btn-group">
+		<p class="btn"><%= link_to "home", root_path , :class => "btn btn-default" %></p>
+		<p class="btn"><%= link_to "new", new_ningen_path , :class => "btn btn-default" %></p>
 	</div>
 </div>
 </body>
