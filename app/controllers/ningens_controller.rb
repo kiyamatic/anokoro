@@ -43,7 +43,7 @@ class NingensController < ApplicationController
 	private
 
 	def ningen_params
-		params[:ningen].permit(:name, :description, :category, :img_url)
+		params[:ningen].permit(:name, :description, :category, :img_url, :ningen_id)
 	end
 
 end
